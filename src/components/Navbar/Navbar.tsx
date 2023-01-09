@@ -1,6 +1,7 @@
 import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
-import { Nav } from "./navbar.style"
+import BurgerMenu from "./BurgerMenu"
+import { IconWraper, Nav } from "./navbar.style"
 
 interface props {
   navItems: Array<string>
@@ -9,7 +10,7 @@ interface props {
 const Navbar = ({ navItems }: props) => {
   return (
     <Nav>
-      <div>
+      <IconWraper>
         <StaticImage
           src="../../images/logo.png"
           loading="eager"
@@ -18,11 +19,12 @@ const Navbar = ({ navItems }: props) => {
           formats={["auto", "webp", "avif"]}
           alt="logo"
         />
-      </div>
+      </IconWraper>
       <ul>
         {navItems.map((value, index) => {
           return <li key={index}>{value}</li>
         })}
+        <BurgerMenu navItems={navItems} />
       </ul>
     </Nav>
   )

@@ -7,12 +7,17 @@ export const NavWrapper = styled.div`
   justify-content: center;
 `
 
+export const IconWraper = styled.div``
+
 export const Nav = styled.nav`
   display: flex;
   width: 80%;
   align-items: center;
   justify-content: space-between;
   margin-top: 2rem;
+  @media (max-width: 578px) {
+    width: 100%;
+  }
   ul {
     display: flex;
     text-decoration: none;
@@ -23,6 +28,7 @@ export const Nav = styled.nav`
     align-self: center;
     margin-left: 0;
     margin-bottom: 0;
+    flex-basis: auto;
   }
   li {
     cursor: pointer;
@@ -31,6 +37,9 @@ export const Nav = styled.nav`
     transition-timing-function: ease-in-out;
     :hover {
       color: #001d3d;
+    }
+    @media (max-width: 578px) {
+      display: none;
     }
   }
 `
